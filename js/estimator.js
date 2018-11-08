@@ -1,3 +1,5 @@
+// Dissertation version
+
 var scene = new THREE.Scene();
 var camera = new THREE.PerspectiveCamera(40, 1500 / 800, 0.1, 5000);
 var currentGlass = 0;
@@ -242,7 +244,8 @@ function onSubmit(event) {
         percentError: userVol/vol[currentGlass]-1,
         timeTaken: timeTaken,
         startTime: startTime,
-        endTime: endTime
+        endTime: endTime,
+        dissertation: 1
     })
         .then(function(docRef) {
             console.log("Document written with ID: ", docRef.id);
@@ -256,7 +259,7 @@ function onSubmit(event) {
     currentGlass = trialOrder[currentTrial];
     if (currentTrial >= 63) {
         alert("You will now be redirected to the end survey.");
-        window.location.replace("https://ncsu.qualtrics.com/jfe/form/SV_abq4JnHNBsXqVQ9?userID=" + userID);
+        window.location.replace("https://ncsu.qualtrics.com/jfe/form/SV_803MDy8ppLZdFfD?userID=" + userID);
     }
 }
 
